@@ -28,7 +28,7 @@ const App: React.FC = () => {
         </a>
       </header> */}
       {error && <div id="box"></div>}
-      <MemberDetails color="red" name="tim" primary={true}/>
+      {!loading && <MemberDetails color="Blue" name="tim" primary={true}/>}
       <div>
         <button
           onClick={() => {

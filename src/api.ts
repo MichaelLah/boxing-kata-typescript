@@ -16,7 +16,7 @@ import { useState, useEffect } from "react";
 const FAMILY_URL = "https://beam-kata.s3.us-east-2.amazonaws.com/perks.json";
 export const useApi = () => {
   const [response, setResponse] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const fetchData = async () => {
     setLoading(true);
@@ -30,7 +30,9 @@ export const useApi = () => {
     setLoading(false);
   };
   useEffect(() => {
-    fetchData();
+    setLoading(true)
+    setTimeout(()=> fetchData(), 1000)
+    // fetchData();
   }, []);
   return [response, loading, error];
 };
