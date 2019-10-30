@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { useApi } from './api'
+import MemberDetails from './MemberDetails'
 
 
 
@@ -12,7 +13,7 @@ const App: React.FC = () => {
   console.log(response, loading, error)
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -25,7 +26,9 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      {error && <div id="box"></div>}
+      <MemberDetails color="red" name="tim" primary={true}/>
       <div>
         <button
           onClick={() => {
