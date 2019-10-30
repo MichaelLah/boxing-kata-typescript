@@ -13,7 +13,6 @@ const App: React.FC = () => {
   console.log(response, loading, error)
   return (
     <div className="App">
-      {error && <div id="box"></div>}
       {/* {!loading && <MemberDetails color="Blue" name="tim" primary={true}/>} */}
       <FamilyPreferences loading={loading} members={response} error={error}/>
     </div>
