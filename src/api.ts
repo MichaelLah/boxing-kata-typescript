@@ -32,7 +32,6 @@ export const useApi = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  debugger;
   return [response, loading, error];
 };
 
