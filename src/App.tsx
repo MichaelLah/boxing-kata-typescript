@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useApi } from './api'
 import MemberDetails from './MemberDetails'
-
+import FamilyPreferences from './FamilyPreferences'
 
 
 const App: React.FC = () => {
@@ -14,7 +14,8 @@ const App: React.FC = () => {
   return (
     <div className="App">
       {error && <div id="box"></div>}
-      {!loading && <MemberDetails color="Blue" name="tim" primary={true}/>}
+      {/* {!loading && <MemberDetails color="Blue" name="tim" primary={true}/>} */}
+      <FamilyPreferences loading={loading} members={response} error={error}/>
     </div>
   );
 };
