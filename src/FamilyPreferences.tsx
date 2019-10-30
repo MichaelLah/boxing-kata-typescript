@@ -13,6 +13,7 @@ interface FamilyPreferencesProps {
   error: boolean;
   loading: boolean;
   members: Array<MemberPreferences>;
+  setOnShippingPage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const StyledFamilyPreferences = styled.div<object>`
@@ -24,7 +25,7 @@ const StyledFamilyPreferences = styled.div<object>`
 `;
 
 const FamilyPreferences: React.FC<FamilyPreferencesProps> = props => {
-  const { loading, members, error } = props;
+  const { loading, members, error, setOnShippingPage } = props;
   const allMembers = members.map(member => {
     return (
       <MemberDetails
@@ -43,7 +44,7 @@ const FamilyPreferences: React.FC<FamilyPreferencesProps> = props => {
       ) : (
         <>
           <div className="preferences-container">{allMembers}</div>
-          <button>Go to Shipping</button>
+          <button onClick={e => setOnShippingPage(true)}>Go to Shipping</button>
         </>
       )}
     </StyledFamilyPreferences>
