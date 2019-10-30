@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { useApi } from './api'
 
 
-const apiCall = async (someBullshit: number) => {
-
-  const apiResponse = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-  // const apiResponse = await fetch('https://beam-kata.s3.us-east-2.amazonaws.com/perks.json')
-
-  const perks = await apiResponse.json()
-  console.log(perks)
-}
 
 const App: React.FC = () => {
-  const blah = "123";
-  apiCall(1)
   const [state, setstate] = useState(0);
+
+  const [response, loading, error] = useApi()
+  console.log(response, loading, error)
   return (
     <div className="App">
       <header className="App-header">
@@ -32,7 +26,7 @@ const App: React.FC = () => {
           Learn React
         </a>
       </header>
-      <body>
+      <div>
         <button
           onClick={() => {
             setstate(state + 1);
@@ -40,7 +34,7 @@ const App: React.FC = () => {
         >
           {state}
         </button>
-      </body>
+      </div>
     </div>
   );
 };
