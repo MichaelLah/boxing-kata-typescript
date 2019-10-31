@@ -13,12 +13,12 @@ const StyledShipping = styled.div<{}>`
     color: #01c9f0;
     cursor: pointer;
   }
-  .tab-container{
+  .tab-container {
     display: flex;
   }
 `;
 const Shipping: React.FC<ShippingProps> = props => {
-  const [tabSelection, setTabSelection] = useState("starter");
+  const [tabSelection, setTabSelection] = useState(STARTER_BOXES);
   const { setOnShippingPage } = props;
   return (
     <StyledShipping>
