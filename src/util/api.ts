@@ -37,7 +37,7 @@ export const useApi = (): [MemberPreferences[], boolean, boolean] => {
   };
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => fetchData(), 1000);
+    setTimeout(() => fetchData(), 100);
     // fetchData();
   }, []);
   return [response, loading, error];
