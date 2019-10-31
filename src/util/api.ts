@@ -12,7 +12,7 @@
 //     return perks;
 //   }
 // }
-import { MemberPreferences } from "./FamilyPreferences";
+import { MemberPreferences } from "../components/FamilyPreferences";
 import { useState, useEffect } from "react";
 const FAMILY_URL = "https://beam-kata.s3.us-east-2.amazonaws.com/perks.json";
 export const useApi = (): [MemberPreferences[], boolean, boolean] => {

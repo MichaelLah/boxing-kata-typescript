@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import { useApi } from "./api";
+import React, { useState } from "react";
+import "../App.css";
+import { useApi } from "../util/api";
 import FamilyPreferences from "./FamilyPreferences";
+import Shipping from "./shipping/Shipping";
 
 const App: React.FC = () => {
   const [onShippingPage, setOnShippingPage] = useState(false);
@@ -12,7 +13,7 @@ const App: React.FC = () => {
     <div className="App">
       {/* {!loading && <MemberDetails color="Blue" name="tim" primary={true}/>} */}
       {onShippingPage ? (
-        <div>shipping page</div>
+        <Shipping setOnShippingPage={setOnShippingPage} />
       ) : (
         <FamilyPreferences
           loading={loading}
