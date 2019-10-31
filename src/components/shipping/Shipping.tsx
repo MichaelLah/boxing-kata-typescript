@@ -6,7 +6,8 @@ interface ShippingProps {
 }
 const StyledShipping = styled.div<{}>`
   .link-text {
-    color: lightblue;
+    color: #01c9f0;
+    cursor: pointer;
   }
 `;
 const Shipping: React.FC<ShippingProps> = props => {
@@ -15,10 +16,12 @@ const Shipping: React.FC<ShippingProps> = props => {
   return (
     <StyledShipping>
       <h2>Shipping</h2>
-      <a onClick={e => setOnShippingPage(false)}>
+      <a className="link-text" onClick={e => setOnShippingPage(false)}>
         Back to Faimly Brush Preferences
       </a>
       <div>shipping container!</div>
+      <div>
+      </div>
     </StyledShipping>
   );
 };

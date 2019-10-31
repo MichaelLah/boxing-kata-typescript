@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 interface MemberDetailsProps {
-  color: string,
-  primary: boolean,
-  name: string,
+  color: string;
+  primary: boolean;
+  name: string;
 }
 
 const StyledMemberDetails = styled.div<{ brushColor: string }>`
@@ -16,10 +16,10 @@ const StyledMemberDetails = styled.div<{ brushColor: string }>`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  .details-container{
+  .details-container {
     /* margin-left: 15px; */
   }
-  .color-circle{
+  .color-circle {
     background-color: ${props => props.brushColor};
     height: 10px;
     width: 10px;
@@ -28,27 +28,26 @@ const StyledMemberDetails = styled.div<{ brushColor: string }>`
     align-self: center;
     margin-right: 10px;
   }
-  .color-container{
+  .color-container {
     display: flex;
     width: 75%;
     text-transform: capitalize;
   }
-`
+`;
 
-const MemberDetails: React.FC<MemberDetailsProps> = (props) => {
+const MemberDetails: React.FC<MemberDetailsProps> = props => {
   const { color, primary, name } = props;
   return (
     <StyledMemberDetails brushColor={color}>
       {/* <div className="details-container"> */}
-        <div className="member-name">{name}</div>
-        <div>{primary ? "Primary" : "Dependent"}</div>
-        <div className="color-container">
-          <div className="color-circle"></div>
-          <div>{color}</div>
-        </div>
+      <div className="member-name">{name}</div>
+      <div>{primary ? "Primary" : "Dependent"}</div>
+      <div className="color-container">
+        <div className="color-circle"></div>
+        <div>{color}</div>
+      </div>
       {/* </div> */}
     </StyledMemberDetails>
-  )
-
+  );
 };
 export default MemberDetails;
