@@ -1,68 +1,88 @@
 import { BoxItem } from "../components/shipping/ShippingBox";
 import { MemberPreferences } from "../components/FamilyPreferences";
 
-export default (preferences: Array<MemberPreferences>): Array<Array<BoxItem>> => {
-  let allBoxes = Array<Array<BoxItem>>();
+export default (
+  preferences: Array<MemberPreferences>
+): {
+  starterBoxes: Array<Array<BoxItem>>;
+  refillBoxes: Array<Array<BoxItem>>;
+} => {
+  let starterBoxes = Array<Array<BoxItem>>();
+  let refillBoxes = Array<Array<BoxItem>>();
   let currentBoxIndex = 0;
   while (currentBoxIndex < preferences.length) {
-    console.log(currentBoxIndex, preferences.length)
-    debugger;
-    const currentBox = Array<BoxItem>();
+    const currentStarterBox = Array<BoxItem>();
+    const currentRefillBox = Array<BoxItem>();
     if (currentBoxIndex + 1 < preferences.length) {
       //At least two more items left
       const currentColor = preferences[currentBoxIndex].brush_color;
       const nextColor = preferences[currentBoxIndex + 1].brush_color;
       if (currentColor === nextColor) {
-        currentBox.push({
+        currentStarterBox.push({
           color: currentColor,
           quantity: 2,
           itemName: "Brushes"
         });
-        currentBox.push({
+        currentStarterBox.push({
+          color: currentColor,
+          quantity: 2,
+          itemName: "Replacement Heads"
+        });
+        currentRefillBox.push({
           color: currentColor,
           quantity: 2,
           itemName: "Replacement Heads"
         });
       } else {
-        currentBox.push({
+        currentStarterBox.push({
           color: currentColor,
           quantity: 1,
           itemName: "Brush"
         });
-        currentBox.push({
+        currentStarterBox.push({
           color: currentColor,
           quantity: 1,
           itemName: "Replacement Head"
         });
-        currentBox.push({
+        currentRefillBox.push({
+          color: currentColor,
+          quantity: 1,
+          itemName: "Replacement Head"
+        });
+        currentStarterBox.push({
           color: nextColor,
           quantity: 1,
           itemName: "Brush"
         });
-        currentBox.push({
+        currentStarterBox.push({
+          color: nextColor,
+          quantity: 1,
+          itemName: "Replacement Head"
+        });
+        currentRefillBox.push({
           color: nextColor,
           quantity: 1,
           itemName: "Replacement Head"
         });
       }
       currentBoxIndex += 2;
-
     } else {
       //only one left!
       const currentColor = preferences[currentBoxIndex].brush_color;
-      currentBox.push({
+      currentStarterBox.push({
         color: currentColor,
         quantity: 1,
         itemName: "Brush"
       });
-      currentBox.push({
+      currentStarterBox.push({
         color: currentColor,
         quantity: 1,
         itemName: "Replacement Head"
       });
       currentBoxIndex++;
     }
-    allBoxes.push(currentBox);
+    starterBoxes.push(currentStarterBox);
+    refillBoxes.push(currentRefillBox);
   }
-  return allBoxes;
+  return { starterBoxes, refillBoxes };
 };

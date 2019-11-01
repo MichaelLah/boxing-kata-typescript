@@ -8,7 +8,6 @@ const App: React.FC = () => {
   const [onShippingPage, setOnShippingPage] = useState(false);
 
   const [response, loading, error] = useApi();
-  console.log(response, loading, error);
   return (
     <div className="App">
       {/* {!loading && <MemberDetails color="Blue" name="tim" primary={true}/>} */}
