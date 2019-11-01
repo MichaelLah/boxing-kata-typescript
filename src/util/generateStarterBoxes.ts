@@ -79,6 +79,11 @@ export default (
         quantity: 1,
         itemName: "Replacement Head"
       });
+      currentRefillBox.push({
+        color: currentColor,
+        quantity: 1,
+        itemName: "Replacement Head"
+      });
       currentBoxIndex++;
     }
     starterBoxes.push(currentStarterBox);

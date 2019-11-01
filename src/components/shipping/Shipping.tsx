@@ -4,6 +4,7 @@ import TabHeader from "./TabHeader";
 import { MemberPreferences } from "../FamilyPreferences";
 import { BoxItem } from "./ShippingBox";
 import generateStarterBoxes from "../../util/generateStarterBoxes";
+import RefillBoxes from "./RefillBoxes";
 
 const STARTER_BOXES = "Starter Boxes";
 const REFIL_BOXES = "Refill Boxes";
@@ -24,7 +25,9 @@ const StyledShipping = styled.div<{}>`
 const Shipping: React.FC<ShippingProps> = props => {
   const [tabSelection, setTabSelection] = useState(STARTER_BOXES);
   //using these weird names for the state because they clash with what generateStarterBoxes returns
-  const [currentStarterBoxes, setCurrentStarterBoxes] = useState(Array<Array<BoxItem>>());
+  const [currentStarterBoxes, setCurrentStarterBoxes] = useState(
+    Array<Array<BoxItem>>()
+  );
   const [currentRefillBoxes, setCurrentRefillBoxes] = useState(
     Array<Array<BoxItem>>()
   );
@@ -52,6 +55,9 @@ const Shipping: React.FC<ShippingProps> = props => {
           selected={REFIL_BOXES === tabSelection}
         />
       </div>
+      {tabSelection === REFIL_BOXES && (
+        <RefillBoxes boxes={currentRefillBoxes}></RefillBoxes>
+      )}
     </StyledShipping>
   );
 };
