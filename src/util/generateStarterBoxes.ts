@@ -46,8 +46,8 @@ export default (
         });
         currentRefillBox.push({
           color: currentColor,
-          quantity: 1,
-          itemName: "Replacement Head"
+          quantity: 2,
+          itemName: "Replacement Heads"
         });
         currentStarterBox.push({
           color: nextColor,
@@ -61,8 +61,8 @@ export default (
         });
         currentRefillBox.push({
           color: nextColor,
-          quantity: 1,
-          itemName: "Replacement Head"
+          quantity: 2,
+          itemName: "Replacement Heads"
         });
       }
       currentBoxIndex += 2;
@@ -81,8 +81,8 @@ export default (
       });
       currentRefillBox.push({
         color: currentColor,
-        quantity: 1,
-        itemName: "Replacement Head"
+        quantity: 2,
+        itemName: "Replacement Heads"
       });
       currentBoxIndex++;
     }

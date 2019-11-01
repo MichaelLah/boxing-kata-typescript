@@ -28,6 +28,7 @@ const StyledShippingBox = styled.div<{}>`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin: 15px;
 `;
 
 const ShippingBox: React.FC<{ contents: Array<BoxItem> }> = props => {
