@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import mapColorToHex from "../util/mapColorToHex";
 const StyledMemberDetails = styled.div<{ brushColor: string }>`
   background-color: grey;
   border-radius: 20px;
@@ -14,7 +14,7 @@ const StyledMemberDetails = styled.div<{ brushColor: string }>`
     /* margin-left: 15px; */
   }
   .color-circle {
-    background-color: ${props => props.brushColor};
+    background-color: ${props => mapColorToHex(props.brushColor)};
     height: 10px;
     width: 10px;
     border-radius: 50%;

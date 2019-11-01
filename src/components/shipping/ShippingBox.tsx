@@ -1,24 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-
-interface BoxItem {
+import mapColorToHex from '../../util/mapColorToHex'
+export interface BoxItem {
   color: "pink" | "green" | "blue";
   quantity: number;
   itemName: string;
 }
 
-const mapColorToHex = (color: string): string => {
-  if (color === "pink") {
-    return "#f41984";
-  }
-  if (color === "blue") {
-    return "#00c9f0";
-  }
-  if (color === "green") {
-    return "#daff00";
-  }
-  return "";
-};
 const StyledItemRow = styled.div<{ color: string }>`
   background-color: ${props => mapColorToHex(props.color)};
   height: 10px;

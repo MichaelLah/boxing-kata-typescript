@@ -3,7 +3,7 @@ import styled from "styled-components";
 import MemberDetails from "./MemberDetails";
 
 export interface MemberPreferences {
-  brush_color: string;
+  brush_color: "pink" | "green" | "blue";
   contract_effective_date: string;
   id: number;
   name: string;
