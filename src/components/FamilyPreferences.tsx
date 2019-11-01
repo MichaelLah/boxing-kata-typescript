@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import MemberDetails from "./MemberDetails";
-
+import Loading from "./Loading"
 export interface MemberPreferences {
   brush_color: "pink" | "green" | "blue";
   contract_effective_date: string;
@@ -17,7 +17,6 @@ interface FamilyPreferencesProps {
 }
 
 const StyledFamilyPreferences = styled.div<object>`
-  /* display: flex; */
   .preferences-container {
     display: flex;
     flex-wrap: wrap;
@@ -45,7 +44,7 @@ const FamilyPreferences: React.FC<FamilyPreferencesProps> = props => {
   return (
     <StyledFamilyPreferences>
       <p>Family Brush Preferences</p>
-      {loading && <p>IM LOADING PUT SOMETHING HERE</p>}
+      {loading && Loading}
       {error ? (
         <p>Error: Could not receive family preferences</p>
       ) : (
