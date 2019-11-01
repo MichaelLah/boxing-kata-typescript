@@ -13,7 +13,7 @@ const App: React.FC = () => {
     <div className="App">
       {/* {!loading && <MemberDetails color="Blue" name="tim" primary={true}/>} */}
       {onShippingPage ? (
-        <Shipping setOnShippingPage={setOnShippingPage} />
+        <Shipping setOnShippingPage={setOnShippingPage} members={response} />
       ) : (
         <FamilyPreferences
           loading={loading}

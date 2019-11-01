@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import TabHeader from "./TabHeader";
+import { MemberPreferences } from "../FamilyPreferences";
+import { BoxItem } from "./ShippingBox";
+import generateStarterBoxes from "../../util/generateStarterBoxes";
 
 const STARTER_BOXES = "Starter Boxes";
 const REFIL_BOXES = "Refill Boxes";
 
 interface ShippingProps {
   setOnShippingPage: React.Dispatch<React.SetStateAction<boolean>>;
+  members: Array<MemberPreferences>;
 }
 const StyledShipping = styled.div<{}>`
   .link-text {
@@ -19,7 +23,11 @@ const StyledShipping = styled.div<{}>`
 `;
 const Shipping: React.FC<ShippingProps> = props => {
   const [tabSelection, setTabSelection] = useState(STARTER_BOXES);
-  const { setOnShippingPage } = props;
+  const [starterBoxes, setStarterBoxes] = useState(Array<Array<BoxItem>>());
+  const { setOnShippingPage, members } = props;
+  useEffect(() => {
+    setStarterBoxes(generateStarterBoxes(members));
+  }, []);
   return (
     <StyledShipping>
       <h2>Shipping</h2>
