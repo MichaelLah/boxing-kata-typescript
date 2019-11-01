@@ -1,7 +1,7 @@
 import React from "react";
 import ShippingBox, { BoxItem } from "./ShippingBox";
 
-const StarterBoxes: React.FC<{ boxes: Array<Array<BoxItem>> }> = props => {
+const RefillBoxes: React.FC<{ boxes: Array<Array<BoxItem>> }> = props => {
   const { boxes } = props;
   const boxDivs = boxes.map(box => {
     return <ShippingBox contents={box}></ShippingBox>;
@@ -20,4 +20,4 @@ const StarterBoxes: React.FC<{ boxes: Array<Array<BoxItem>> }> = props => {
   );
 };
 
-export default StarterBoxes;
+export default RefillBoxes;

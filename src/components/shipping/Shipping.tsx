@@ -5,6 +5,7 @@ import { MemberPreferences } from "../FamilyPreferences";
 import { BoxItem } from "./ShippingBox";
 import generateStarterBoxes from "../../util/generateStarterBoxes";
 import RefillBoxes from "./RefillBoxes";
+import StarterBoxes from "./StarterBoxes";
 
 const STARTER_BOXES = "Starter Boxes";
 const REFIL_BOXES = "Refill Boxes";
@@ -57,6 +58,9 @@ const Shipping: React.FC<ShippingProps> = props => {
       </div>
       {tabSelection === REFIL_BOXES && (
         <RefillBoxes boxes={currentRefillBoxes}></RefillBoxes>
+      )}
+      {tabSelection === STARTER_BOXES && (
+        <StarterBoxes boxes={currentStarterBoxes}></StarterBoxes>
       )}
     </StyledShipping>
   );
