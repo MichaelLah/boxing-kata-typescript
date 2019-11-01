@@ -20,7 +20,9 @@ const StyledShipping = styled.div<{}>`
     cursor: pointer;
   }
   .tab-container {
+    margin-top: 25px;
     display: flex;
+    flex-wrap: wrap;
   }
 `;
 const Shipping: React.FC<ShippingProps> = props => {

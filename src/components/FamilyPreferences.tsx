@@ -22,6 +22,13 @@ const StyledFamilyPreferences = styled.div<object>`
     display: flex;
     flex-wrap: wrap;
   }
+  button {
+    margin-top: 15px;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #00c9f0;
+  }
 `;
 
 const FamilyPreferences: React.FC<FamilyPreferencesProps> = props => {
