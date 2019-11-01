@@ -1,12 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-interface MemberDetailsProps {
-  color: string;
-  primary: boolean;
-  name: string;
-}
-
 const StyledMemberDetails = styled.div<{ brushColor: string }>`
   background-color: grey;
   border-radius: 20px;
@@ -35,7 +29,11 @@ const StyledMemberDetails = styled.div<{ brushColor: string }>`
   }
 `;
 
-const MemberDetails: React.FC<MemberDetailsProps> = props => {
+const MemberDetails: React.FC<{
+  color: string;
+  primary: boolean;
+  name: string;
+}> = props => {
   const { color, primary, name } = props;
   return (
     <StyledMemberDetails brushColor={color}>
