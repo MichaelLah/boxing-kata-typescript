@@ -23,7 +23,7 @@ const StyledShippingBox = styled.div<{}>`
   background-color: grey;
   border-radius: 20px;
   height: 100px;
-  width: 175px;
+  width: 190px;
   padding: 10px;
   display: flex;
   flex-direction: column;
