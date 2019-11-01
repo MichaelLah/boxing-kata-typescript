@@ -10,6 +10,7 @@ const StyledMemberDetails = styled.div<{ brushColor: string }>`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin: 10px;
   .details-container {
     /* margin-left: 15px; */
   }
