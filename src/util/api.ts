@@ -14,13 +14,10 @@ export const useApi = (): [MemberPreferences[], boolean, boolean] => {
     } catch {
       setError(true);
     }
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    setLoading(false);
   };
   useEffect(() => {
     setLoading(true);
-    // setTimeout(() => fetchData(), 100);
     fetchData();
   }, []);
   return [response, loading, error];
