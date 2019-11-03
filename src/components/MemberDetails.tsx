@@ -11,9 +11,6 @@ const StyledMemberDetails = styled.div<{ brushColor: string }>`
   flex-direction: column;
   justify-content: space-evenly;
   margin: 10px;
-  .details-container {
-    /* margin-left: 15px; */
-  }
   .color-circle {
     background-color: ${props => mapColorToHex(props.brushColor)};
     height: 10px;
@@ -38,14 +35,12 @@ const MemberDetails: React.FC<{
   const { color, primary, name } = props;
   return (
     <StyledMemberDetails brushColor={color}>
-      {/* <div className="details-container"> */}
       <div className="member-name">{name}</div>
       <div>{primary ? "Primary" : "Dependent"}</div>
       <div className="color-container">
         <div className="color-circle"></div>
         <div>{color}</div>
       </div>
-      {/* </div> */}
     </StyledMemberDetails>
   );
 };

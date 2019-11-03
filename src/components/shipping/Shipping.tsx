@@ -3,7 +3,7 @@ import styled from "styled-components";
 import TabHeader from "./TabHeader";
 import { MemberPreferences } from "../FamilyPreferences";
 import { BoxItem } from "./ShippingBox";
-import generateStarterBoxes from "../../util/generateStarterBoxes";
+import generateBoxes from "../../util/generateBoxes";
 import RefillBoxes from "./RefillBoxes";
 import StarterBoxes from "./StarterBoxes";
 
@@ -36,7 +36,7 @@ const Shipping: React.FC<ShippingProps> = props => {
   );
   const { setOnShippingPage, members } = props;
   useEffect(() => {
-    const { starterBoxes, refillBoxes } = generateStarterBoxes(members);
+    const { starterBoxes, refillBoxes } = generateBoxes(members);
     setCurrentStarterBoxes(starterBoxes);
     setCurrentRefillBoxes(refillBoxes);
   }, []);

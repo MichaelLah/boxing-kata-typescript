@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import MemberDetails from "./MemberDetails";
-import Loading from "./Loading"
+import Loading from "./Loading";
+import LoadingError from "./LoadingError";
 export interface MemberPreferences {
   brush_color: "pink" | "green" | "blue";
   contract_effective_date: string;
@@ -44,10 +45,9 @@ const FamilyPreferences: React.FC<FamilyPreferencesProps> = props => {
   return (
     <StyledFamilyPreferences>
       <p>Family Brush Preferences</p>
-      {loading && Loading}
-      {error ? (
-        <p>Error: Could not receive family preferences</p>
-      ) : (
+      {loading && <Loading />}
+      {error && <LoadingError />}
+      {!loading && !error && (
         <>
           <div className="preferences-container">{allMembers}</div>
           <button onClick={e => setOnShippingPage(true)}>Go to Shipping</button>
@@ -57,4 +57,3 @@ const FamilyPreferences: React.FC<FamilyPreferencesProps> = props => {
   );
 };
 export default FamilyPreferences;
-// export MemberPreferences;
